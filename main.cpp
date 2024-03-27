@@ -16,6 +16,15 @@ void printTimetable(const std::vector<TimetableEntry>& timetable) {
     }
 }
 
+std::vector<TimetableEntry> getTimetableForDay(const std::vector<TimetableEntry>& timetable, const std::string& day) {
+    std::vector<TimetableEntry> result;
+    for (const auto& entry : timetable) {
+        if (entry.time.find(day) != std::string::npos) {
+            result.push_back(entry);
+        }
+    }
+    return result;
+}
 
 
 
