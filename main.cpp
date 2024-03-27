@@ -5,17 +5,7 @@
 
 using namespace std;
 
-TimetableEntry::TimetableEntry(std::string sub, std::string tea, std::string rom, std::string sec, std::string stu, std::string tim)
-    : subject(sub), teacher(tea), room(rom), section(sec), student(stu), time(tim) {}
 
-void printTimetable(const std::vector<TimetableEntry>& timetable) {
-    std::cout << "Timetable:\n";
-    for (const auto& entry : timetable) {
-        std::cout << "Subject: " << entry.subject << ", Teacher: " << entry.teacher
-            << ", Room: " << entry.room << ", Section: " << entry.section
-            << ", Student: " << entry.student << ", Time: " << entry.time << std::endl;
-    }
-}
 
 std::vector<TimetableEntry> getTimetableForDay(const std::vector<TimetableEntry>& timetable, const std::string& day) {
     std::vector<TimetableEntry> result;
