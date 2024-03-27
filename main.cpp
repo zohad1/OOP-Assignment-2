@@ -4,6 +4,7 @@
 #include "TTF.h"
 
 using namespace std;
+
 TimetableEntry::TimetableEntry(std::string sub, std::string tea, std::string rom, std::string sec, std::string stu, std::string tim)
     : subject(sub), teacher(tea), room(rom), section(sec), student(stu), time(tim) {}
 
@@ -25,8 +26,6 @@ std::vector<TimetableEntry> getTimetableForDay(const std::vector<TimetableEntry>
     }
     return result;
 }
-
-
 
 std::vector<TimetableEntry> getTimetableForTime(const std::vector<TimetableEntry>& timetable, const std::string& day, const std::string& time) {
     std::vector<TimetableEntry> result;
