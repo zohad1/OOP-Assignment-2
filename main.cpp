@@ -59,15 +59,7 @@ std::vector<TimetableEntry> getTimetableForSection(const std::vector<TimetableEn
     return result;
 }
 
-std::vector<TimetableEntry> getTimetableForRoom(const std::vector<TimetableEntry>& timetable, const std::string& room) {
-    std::vector<TimetableEntry> result;
-    for (const auto& entry : timetable) {
-        if (entry.room == room) {
-            result.push_back(entry);
-        }
-    }
-    return result;
-}
+
 
 std::vector<TimetableEntry> getTimetableForStudent(const std::vector<TimetableEntry>& timetable, const std::string& student) {
     std::vector<TimetableEntry> result;
