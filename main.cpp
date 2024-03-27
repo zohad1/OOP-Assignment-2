@@ -81,7 +81,19 @@ std::vector<TimetableEntry> getTimetableForStudent(const std::vector<TimetableEn
 int main()
 {
     // Sample timetable entries
-   
+    vector<TimetableEntry> timetable = {
+        {"OOP", "Dr.Tamim", "417", "A", "Zohad", "Monday 9:00 AM"},
+        {"CP", "Dr.Raja", "418", "B", "Armaghan", "Monday 10:30 AM"},
+        {"ISLAMIYAT", "Dr.Raheem", "419", "C", "Sher", "Tuesday 1:00 PM"},
+        {"QURANICSTUDIES", "Dr.RaheemUllah", "417", "D", "Sibain", "Tuesday 2:30 PM"},
+        {"OOP", "Dr.Tamim", "418", "E", "Abdullah", "Wednesday 4:00 PM"},
+        {"QURANICSTUDIES", "Dr.RaheemUllah", "417", "A", "Zohad", "Wednesday 9:00 AM"},
+        {"ISLAMIYAT", "Dr.Tamim", "418", "B", "Armaghan", "Thursday 10:30 AM"},
+        {"MATHS", "Mr.Zubair", "419", "C", "Sher", "Thursday 1:00 PM"},
+        {"CP", "Dr.Raja", "417", "D", "Sibtain", "Friday 2:30 PM"},
+        {"CP", "Dr.Raja", "418", "E", "Abdullah", "Friday 4:00 PM"}
+        // Add more entries as needed
+    };
 
     // Get user's choice
     char choice;
