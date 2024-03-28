@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <iomanip> // For std::setw
+#include <iomanip>
 #include "TTE.h"
 #include "TTF.h"
 
@@ -152,45 +152,52 @@ int main()
         // Handle user's choice
         switch (choice)
         {
-        case 1:
-        {
+        case 1: {
             string section;
             cout << "Enter the section (A, B): ";
             cin >> section;
 
-            // Get timetable for specific student section
-            vector<TimetableEntry> timetableForSection = getTimetableForSection(timetable, section);
-            cout << "\nTimetable for section " << section << ":\n";
-            printTimetable(timetableForSection);
+            // Validate input
+            if (section == "A" || section == "B") {
+                // Get timetable for specific student section
+                vector<TimetableEntry> timetableForSection = getTimetableForSection(timetable, section);
+                cout << "\nTimetable for section " << section << ":\n";
+                printTimetable(timetableForSection);
+            }
+            else {
+                cout << "Wrong input. Please enter either 'A' or 'B'.\n";
+            }
             break;
-
         }
-        case 2:
-        {
+        case 2: {
             string student;
             cout << "Enter the student name (Zohad, Armaghan, Sher, Sibtain): ";
             cin >> student;
-
-            // Get timetable for specific student
-            vector<TimetableEntry> timetableForStudent = getTimetableForStudent(timetable, student);
-            cout << "\nStudents timetable " << student << ":\n";
-            printTimetable(timetableForStudent);
-           
+            if (student == "Zohad" || student == "Armaghan" || student == "Sher" || student == "Sibtain") {
+                
+                vector<TimetableEntry> timetableForStudent = getTimetableForStudent(timetable, student);
+                cout << "\nStudents timetable " << student << ":\n";
+                printTimetable(timetableForStudent);
+            }
+            else {
+                cout << "Wrong input. Please enter a valid student name.\n";
+            }
 
             break;
         }
-
-        case 3:
-        {
+        case 3: {
             string room;
             cout << "Enter the room (417, 418, 419, 401, 4): ";
             cin >> room;
-
-            // Get timetable for specific room
-            vector<TimetableEntry> timetableForRoom = getTimetableForRoom(timetable, room);
-            cout << "\nTimetable for room " << room << ":\n";
-            printTimetable(timetableForRoom);
-            
+            if (room == "417" || room == "418" || room == "419" || room == "401" || room == "4") {
+                
+                vector<TimetableEntry> timetableForRoom = getTimetableForRoom(timetable, room);
+                cout << "\nTimetable for room " << room << ":\n";
+                printTimetable(timetableForRoom);
+            }
+            else {
+                cout << "Wrong input. Please enter a valid room number.\n";
+            }
 
             break;
         }
