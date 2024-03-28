@@ -2,19 +2,20 @@
 #define TTE_H
 
 #include <string>
+using namespace std;
+
 class TimetableEntry {
 public:
-    std::string subject;
-    std::string teacher;
-    std::string room;
-    std::string section;
-    std::string student;
-    std::string time;
+    string subject;
+    string teacher;
+    string room;
+    string section;
+    string student;
+    string time;
 
     TimetableEntry(std::string sub, std::string tea, std::string rom, std::string sec, std::string stu, std::string tim);
 };
 
-
-
 #endif
+
 
