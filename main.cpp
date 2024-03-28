@@ -6,40 +6,40 @@
 
 using namespace std;
 
-TimetableEntry::TimetableEntry(std::string sub, std::string tea, std::string rom, std::string sec, std::string stu, std::string tim)
+TimetableEntry::TimetableEntry(string sub, string tea, string rom, string sec, string stu, string tim)
     : subject(sub), teacher(tea), room(rom), section(sec), student(stu), time(tim) {}
 
-void printTimetable(const std::vector<TimetableEntry>& timetable) {
+void printTimetable(const vector<TimetableEntry>& timetable) {
     // Print the table header
-    std::cout << std::left << std::setw(12) << "Course" << std::setw(18) << "Instructor"
-        << std::setw(8) << "Room" << std::setw(10) << "Student"
-        << std::setw(12) << "Day" << "Time" << std::endl;
-    std::cout << "--------------------------------------------------------------------------------" << std::endl;
+    cout << left << setw(12) << "Course" << setw(18) << "Instructor"
+        << setw(8) << "Room" << setw(10) << "Student"
+        << setw(12) << "Day" << "Time" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
 
     // Print each timetable entry
     for (const auto& entry : timetable) {
-        std::cout << std::left << std::setw(12) << entry.subject
-            << std::setw(18) << entry.teacher
-            << std::setw(8) << entry.room
-            << std::setw(10) << entry.student
-            << std::setw(12) << entry.time.substr(0, entry.time.find(' '))
-            << entry.time.substr(entry.time.find(' ') + 1) << std::endl;
+        cout << left << setw(12) << entry.subject
+            << setw(18) << entry.teacher
+            << setw(8) << entry.room
+            << setw(10) << entry.student
+            << setw(12) << entry.time.substr(0, entry.time.find(' '))
+            << entry.time.substr(entry.time.find(' ') + 1) << endl;
     }
 }
 
-vector<TimetableEntry> getTimetableForDay(const std::vector<TimetableEntry>& timetable, const std::string& day) {
-    std::vector<TimetableEntry> result;
+vector<TimetableEntry> getTimetableForDay(const vector<TimetableEntry>& timetable, const string& day) {
+    vector<TimetableEntry> result;
     for (const auto& entry : timetable) {
-        if (entry.time.find(day) != std::string::npos) {
+        if (entry.time.find(day) != string::npos) {
             result.push_back(entry);
         }
     }
     return result;
 }
 
-vector<TimetableEntry> getTimetableForTime(const std::vector<TimetableEntry>& timetable, const std::string& day, const std::string& time) {
-    std::vector<TimetableEntry> result;
-    std::string target = day + " " + time;
+vector<TimetableEntry> getTimetableForTime(const vector<TimetableEntry>& timetable, const string& day, const string& time) {
+    vector<TimetableEntry> result;
+    string target = day + " " + time;
     for (const auto& entry : timetable) {
         if (entry.time == target) {
             result.push_back(entry);
@@ -48,8 +48,8 @@ vector<TimetableEntry> getTimetableForTime(const std::vector<TimetableEntry>& ti
     return result;
 }
 
-vector<TimetableEntry> getTimetableForTeacher(const std::vector<TimetableEntry>& timetable, const std::string& teacher) {
-    std::vector<TimetableEntry> result;
+vector<TimetableEntry> getTimetableForTeacher(const vector<TimetableEntry>& timetable, const string& teacher) {
+    vector<TimetableEntry> result;
     for (const auto& entry : timetable) {
         if (entry.teacher == teacher) {
             result.push_back(entry);
@@ -58,8 +58,8 @@ vector<TimetableEntry> getTimetableForTeacher(const std::vector<TimetableEntry>&
     return result;
 }
 
-std::vector<TimetableEntry> getTimetableForSection(const std::vector<TimetableEntry>& timetable, const std::string& section) {
-    std::vector<TimetableEntry> result;
+vector<TimetableEntry> getTimetableForSection(const vector<TimetableEntry>& timetable, const string& section) {
+    vector<TimetableEntry> result;
     for (const auto& entry : timetable) {
         if (entry.section == section) {
             result.push_back(entry);
@@ -68,8 +68,8 @@ std::vector<TimetableEntry> getTimetableForSection(const std::vector<TimetableEn
     return result;
 }
 
-vector<TimetableEntry> getTimetableForRoom(const std::vector<TimetableEntry>& timetable, const std::string& room) {
-    std::vector<TimetableEntry> result;
+vector<TimetableEntry> getTimetableForRoom(const vector<TimetableEntry>& timetable, const string& room) {
+    vector<TimetableEntry> result;
     for (const auto& entry : timetable) {
         if (entry.room == room) {
             result.push_back(entry);
@@ -78,8 +78,8 @@ vector<TimetableEntry> getTimetableForRoom(const std::vector<TimetableEntry>& ti
     return result;
 }
 
-vector<TimetableEntry> getTimetableForStudent(const std::vector<TimetableEntry>& timetable, const std::string& student) {
-    std::vector<TimetableEntry> result;
+vector<TimetableEntry> getTimetableForStudent(const vector<TimetableEntry>& timetable, const string& student) {
+    vector<TimetableEntry> result;
     for (const auto& entry : timetable) {
         if (entry.student == student) {
             result.push_back(entry);
@@ -127,7 +127,7 @@ int main()
         {"DS", "Mr. Asim", "419", "B", "Sibtain", "Thursday 11:00 AM"},
         {"Islamiyat", "Dr.RaheemUllah", "417", "B", "Sibtain", "Friday 9:00 AM"},
         {"Islamiyat", "Dr.RaheemUllah", "417", "B", "Sher", "Friday 9:00 AM"},
-        
+
     };
     int choice;
     do {
@@ -147,7 +147,7 @@ int main()
         cout << "8) Exit\n";
         cout << "Enter option(1, 2, 3, 4, 5, 6, 8): ";
         cin >> choice;
-        
+
 
         // Handle user's choice
         switch (choice)
@@ -174,7 +174,7 @@ int main()
             cout << "Enter the student name (Zohad, Armaghan, Sher, Sibtain): ";
             cin >> student;
             if (student == "Zohad" || student == "Armaghan" || student == "Sher" || student == "Sibtain") {
-                
+
                 vector<TimetableEntry> timetableForStudent = getTimetableForStudent(timetable, student);
                 cout << "\nStudents timetable " << student << ":\n";
                 printTimetable(timetableForStudent);
@@ -190,7 +190,7 @@ int main()
             cout << "Enter the room (417, 418, 419, 401, 4): ";
             cin >> room;
             if (room == "417" || room == "418" || room == "419" || room == "401" || room == "4") {
-                
+
                 vector<TimetableEntry> timetableForRoom = getTimetableForRoom(timetable, room);
                 cout << "\nTimetable for room " << room << ":\n";
                 printTimetable(timetableForRoom);
