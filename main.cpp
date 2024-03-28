@@ -240,7 +240,8 @@ int main()
         default:
             cout << "Invalid choice. Please try again.\n";
         }
-        
+        system("pause");
+        system("cls");
     } while (choice != 8);
 
     return 0;
