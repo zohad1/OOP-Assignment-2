@@ -1,6 +1,9 @@
 #include <iostream>
+#include<string>
+#include<sstream>
 #include <vector>
 #include <iomanip>
+#include<fstream>
 #include "TTE.h"
 #include "TTF.h"
 
@@ -8,6 +11,60 @@ using namespace std;
 
 TimetableEntry::TimetableEntry(string sub, string tea, string rom, string sec, string stu, string tim)
     : subject(sub), teacher(tea), room(rom), section(sec), student(stu), time(tim) {}
+
+
+void saveTimetableToFile(const vector<TimetableEntry>& timetable) {
+    ofstream outFile("timetable.txt");
+    if (outFile.is_open()) {
+        for (const auto& entry : timetable) {
+            outFile << entry.subject << ","
+                << entry.teacher << ","
+                << entry.room << ","
+                << entry.section << ","
+                << entry.student << ","
+                << entry.time << "\n";
+        }
+        outFile.close();
+        cout << "Timetable saved to file successfully.\n";
+    }
+    else {
+        cout << "Unable to open file for writing.\n";
+    }
+}
+
+bool loadTimetableFromFile(vector<TimetableEntry>& timetable, const string& filePath) {
+    ifstream inFile(filePath);
+    string line;
+    string subject, teacher, room, section, student, time;
+
+    // Check if we can open the file
+    if (!inFile.is_open()) {
+        cout << "Unable to open file for reading.\n";
+        return false;
+    }
+
+    // Clear existing entries in the timetable
+    timetable.clear();
+
+    while (getline(inFile, line)) {
+        stringstream ss (line);
+        getline(ss, subject, ',');
+        getline(ss, teacher, ',');
+        getline(ss, room, ',');
+        getline(ss, section, ',');
+        getline(ss, student, ',');
+        getline(ss, time);
+
+        // Create a new TimetableEntry object and add it to the vector
+        TimetableEntry entry(subject, teacher, room, section, student, time);
+        timetable.push_back(entry);
+    }
+
+    inFile.close();
+    return true;
+}
+
+
 
 void printTimetable(const vector<TimetableEntry>& timetable) {
     // Print the table header
@@ -91,51 +148,22 @@ vector<TimetableEntry> getTimetableForStudent(const vector<TimetableEntry>& time
 int main()
 {
     // Sample timetable entries
-    vector<TimetableEntry> timetable = {
-        // Section A
-        {"OOP", "Dr.Tamim", "417", "A", "Zohad", "Monday 9:00 AM"},
-        {"OOP", "Dr.Tamim", "417", "A", "Armaghan", "Monday 9:00 AM"},
-        {"Maths", "Mr. Zubair", "418", "A", "Armaghan", "Monday 11:00 AM"},
-        {"Maths", "Mr. Zubair", "418", "A", "Zohad", "Monday 11:00 AM"},
-        {"CP", "Dr.Raja", "418", "A", "Zohad", "Tuesday 10:30 AM"},
-        {"CP", "Dr.Raja", "418", "A", "Armaghan", "Tuesday 10:30 AM"},
-        {"DS", "Mr. Asim", "419", "A", "Armaghan", "Tuesday 1:00 PM"},
-        {"DS", "Mr. Asim", "419", "A", "Zohad", "Tuesday 1:00 PM"},
-        {"ECS", "Dr.Ahmad", "417", "A", "Zohad", "Wednesday 9:00 AM"},
-		{"ECS", "Dr.Ahmad", "417", "A", "Armaghan", "Wednesday 9:00 AM"},
-        {"Islamiyat", "Dr.RaheemUllah", "418", "A", "Armaghan", "Wednesday 11:00 AM"},
-        {"Islamiyat", "Dr.RaheemUllah", "418", "A", "Zohad", "Wednesday 11:00 AM"},
-        {"OOP LAB", "Mr.Z", "401", "A", "Zohad", "Thursday 1:00 PM"},
-        {"OOP LAB", "Mr.Z", "401", "A", "Armaghan", "Thursday 1:00 PM"},
-        {"DS", "Mr. Asim", "419", "A", "Armaghan", "Friday 9:00 AM"},
-        {"DS", "Mr. Asim", "419", "A", "Zohad", "Friday 9:00 AM"},
+    vector<TimetableEntry> timetable; 
 
-        // Section B
-        {"CP", "Dr.Raja", "418", "B", "Sher", "Monday 9:00 AM"},
-        {"CP", "Dr.Raja", "418", "B", "Sibtain", "Monday 9:00 AM"},
-        {"DS", "Mr. Asim", "419", "B", "Sibtain", "Monday 11:00 AM"},
-		{"DS", "Mr. Asim", "419", "B", "Sher", "Monday 11:00 AM"},
-        {"OOP", "Dr.Tamim", "417", "B", "Sher", "Tuesday 10:30 AM"},
-		{"OOP", "Dr.Tamim", "417", "B", "Sibtain", "Tuesday 10:30 AM"},
-        {"Maths", "Mr. Zubair", "418", "B", "Sibtain", "Tuesday 1:00 PM"},
-        {"Maths", "Mr. Zubair", "418", "B", "Sher", "Tuesday 1:00 PM"},
-        {"OOP LAB", "Mr.Z", "401", "B", "Sher", "Wednesday 9:00 AM"},
-        {"OOP LAB", "Mr.Z", "401", "B", "Sibtain", "Wednesday 9:00 AM"},
-        {"ECS", "Dr.Ahmad", "418", "B", "Sibtain", "Thursday 9:00 AM"},
-        {"ECS", "Dr.Ahmad", "418", "B", "Sher", "Thursday 9:00 AM"},
-        {"DS", "Mr. Asim", "419", "B", "Sher", "Thursday 11:00 AM"},
-        {"DS", "Mr. Asim", "419", "B", "Sibtain", "Thursday 11:00 AM"},
-        {"Islamiyat", "Dr.RaheemUllah", "417", "B", "Sibtain", "Friday 9:00 AM"},
-        {"Islamiyat", "Dr.RaheemUllah", "417", "B", "Sher", "Friday 9:00 AM"},
+     
 
-    };
+
+    if(!loadTimetableFromFile(timetable, "timetable.txt")) {
+        cout << "Failed to load timetable from file. Starting with an empty timetable.\n";
+    }
+
     int choice;
     do {
         cout << " \n";
-        cout<<"====================================================================================================\n";
+        cout << "====================================================================================================\n";
         cout << " \n";
-        cout<<"---------------------------------Welcome to the Time Table System-----------------------------------\n";
-        cout<< " \n";
+        cout << "---------------------------------Welcome to the Time Table System-----------------------------------\n";
+        cout << " \n";
         cout << "Choose from the following options:\n";
         cout << "1) Section wise time table\n";
         cout << "2) Student wise time table\n";
@@ -144,7 +172,8 @@ int main()
         cout << "5) Day and Time wise\n";
         cout << "6) Teacher wise Timetable\n";
         cout << "7) Print whole TimeTable\n";
-        cout << "8) Exit\n";
+        cout << "8) Update timetable\n";
+        cout << "9) Exit\n";
         cout << "Enter option(1, 2, 3, 4, 5, 6, 8): ";
         cin >> choice;
 
@@ -242,14 +271,56 @@ int main()
             printTimetable(timetable);
             break;
         case 8:
+            timetable = {
+                // Section A
+                {"OOP", "Dr.Tamim", "417", "A", "Rehan", "Monday 9:00 AM"},
+                {"OOP", "Dr.Tamim", "417", "A", "Ahmed", "Monday 9:00 AM"},
+                {"Maths", "Mr. Zubair", "418", "A", "Ahmed", "Monday 11:00 AM"},
+                {"Maths", "Mr. Zubair", "418", "A", "Zeshan", "Monday 11:00 AM"},
+                {"CP", "Dr.Raja", "418", "A", "Zeshan", "Tuesday 10:30 AM"},
+                {"CP", "Dr.Raja", "418", "A", "Ahmed", "Tuesday 10:30 AM"},
+                {"DS", "Mr. Asim", "419", "A", "Armaghan", "Tuesday 1:00 PM"},
+                {"DS", "Mr. Asim", "419", "A", "Zohad", "Tuesday 1:00 PM"},
+                {"ECS", "Dr.Ahmad", "417", "A", "Zohad", "Wednesday 9:00 AM"},
+                {"ECS", "Dr.Ahmad", "417", "A", "Armaghan", "Wednesday 9:00 AM"},
+                {"Islamiyat", "Dr.RaheemUllah", "418", "A", "Armaghan", "Wednesday 11:00 AM"},
+                {"Islamiyat", "Dr.RaheemUllah", "418", "A", "Zohad", "Wednesday 11:00 AM"},
+                {"OOP LAB", "Mr.Z", "401", "A", "Zohad", "Thursday 1:00 PM"},
+                {"OOP LAB", "Mr.Z", "401", "A", "Armaghan", "Thursday 1:00 PM"},
+                {"DS", "Mr. Asim", "419", "A", "Armaghan", "Friday 9:00 AM"},
+                {"DS", "Mr. Asim", "419", "A", "Zohad", "Friday 9:00 AM"},
+
+                // Section B
+                {"CP", "Dr.Raja", "418", "B", "Sher", "Monday 9:00 AM"},
+                {"CP", "Dr.Raja", "418", "B", "Sibtain", "Monday 9:00 AM"},
+                {"DS", "Mr. Asim", "419", "B", "Sibtain", "Monday 11:00 AM"},
+                {"DS", "Mr. Asim", "419", "B", "Sher", "Monday 11:00 AM"},
+                {"OOP", "Dr.Tamim", "417", "B", "Sher", "Tuesday 10:30 AM"},
+                {"OOP", "Dr.Tamim", "417", "B", "Sibtain", "Tuesday 10:30 AM"},
+                {"Maths", "Mr. Zubair", "418", "B", "Sibtain", "Tuesday 1:00 PM"},
+                {"Maths", "Mr. Zubair", "418", "B", "Sher", "Tuesday 1:00 PM"},
+                {"OOP LAB", "Mr.Z", "401", "B", "Sher", "Wednesday 9:00 AM"},
+                {"OOP LAB", "Mr.Z", "401", "B", "Sibtain", "Wednesday 9:00 AM"},
+                {"ECS", "Dr.Ahmad", "418", "B", "Sibtain", "Thursday 9:00 AM"},
+                {"ECS", "Dr.Ahmad", "418", "B", "Sher", "Thursday 9:00 AM"},
+                {"DS", "Mr. Asim", "419", "B", "Sher", "Thursday 11:00 AM"},
+                {"DS", "Mr. Asim", "419", "B", "Sibtain", "Thursday 11:00 AM"},
+                {"Islamiyat", "Dr.RaheemUllah", "417", "B", "Sibtain", "Friday 9:00 AM"},
+                {"Islamiyat", "Dr.RaheemUllah", "417", "B", "Sher", "Friday 9:00 AM"},
+
+            };
+            saveTimetableToFile(timetable);
+            break;
+        case 9:
             cout << "Exiting...\n";
             break;
+
         default:
             cout << "Invalid choice. Please try again.\n";
         }
         system("pause");
         system("cls");
-    } while (choice != 8);
+    } while (choice != 9);
 
     return 0;
 }
