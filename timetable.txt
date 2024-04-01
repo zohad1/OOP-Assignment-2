@@ -1,0 +1,32 @@
+OOP,Dr.Tamim,417,A,Zoha,Monday 9:00 AM
+OOP,Dr.Tamim,417,A,Armaghan,Monday 9:00 AM
+Maths,Mr. Zubair,418,A,Armaghan,Monday 11:00 AM
+Maths,Mr. Zubair,418,A,Zohad,Monday 11:00 AM
+CP,Dr.Raja,418,A,Zohad,Tuesday 10:30 AM
+CP,Dr.Raja,418,A,Armaghan,Tuesday 10:30 AM
+DS,Mr. Asim,419,A,Armaghan,Tuesday 1:00 PM
+DS,Mr. Asim,419,A,Zohad,Tuesday 1:00 PM
+ECS,Dr.Ahmad,417,A,Zohad,Wednesday 9:00 AM
+ECS,Dr.Ahmad,417,A,Armaghan,Wednesday 9:00 AM
+Islamiyat,Dr.RaheemUllah,418,A,Armaghan,Wednesday 11:00 AM
+Islamiyat,Dr.RaheemUllah,418,A,Zohad,Wednesday 11:00 AM
+OOP LAB,Mr.Z,401,A,Zohad,Thursday 1:00 PM
+OOP LAB,Mr.Z,401,A,Armaghan,Thursday 1:00 PM
+DS,Mr. Asim,419,A,Armaghan,Friday 9:00 AM
+DS,Mr. Asim,419,A,Zohad,Friday 9:00 AM
+CP,Dr.Raja,418,B,Sher,Monday 9:00 AM
+CP,Dr.Raja,418,B,Sibtain,Monday 9:00 AM
+DS,Mr. Asim,419,B,Sibtain,Monday 11:00 AM
+DS,Mr. Asim,419,B,Sher,Monday 11:00 AM
+OOP,Dr.Tamim,417,B,Sher,Tuesday 10:30 AM
+OOP,Dr.Tamim,417,B,Sibtain,Tuesday 10:30 AM
+Maths,Mr. Zubair,418,B,Sibtain,Tuesday 1:00 PM
+Maths,Mr. Zubair,418,B,Sher,Tuesday 1:00 PM
+OOP LAB,Mr.Z,401,B,Sher,Wednesday 9:00 AM
+OOP LAB,Mr.Z,401,B,Sibtain,Wednesday 9:00 AM
+ECS,Dr.Ahmad,418,B,Sibtain,Thursday 9:00 AM
+ECS,Dr.Ahmad,418,B,Sher,Thursday 9:00 AM
+DS,Mr. Asim,419,B,Sher,Thursday 11:00 AM
+DS,Mr. Asim,419,B,Sibtain,Thursday 11:00 AM
+Islamiyat,Dr.RaheemUllah,417,B,Sibtain,Friday 9:00 AM
+Islamiyat,Dr.RaheemUllah,417,B,Sher,Friday 9:00 AM
