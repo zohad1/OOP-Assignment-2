@@ -1,0 +1,12 @@
+Wednesday	OOP	,	JB-4-15	11:00 - 12:00	A
+Monday	OOP	Name,ID	JB 4-00	1:00 - 2:00	C
+Tuesday	DS	Dr Raja,9	JB 4-17	10:00 - 11:00	D
+Friday	ISE	Name,ID	JB-4-02	9:00 - 10:00	D
+Wednesday	DS	Name,ID	JB 4-17	10:00 - 11:00	B
+Tuesday	Islamic	,	JB 4-17	9:00 - 10:00	C
+Thursday	OOP	GHULAM QAMAR,4	JB-4-02	11:00 - 12:00	D
+Tuesday	DS	GHULAM QAMAR,4	JB-4-02	9:00 - 10:00	D
+Monday	ISE	DR AWAIS MAJEED,2	JB-4-15	10:00 - 11:00	C
+Tuesday	LA	Name,ID	JB-4-06	9:00 - 10:00	D
+Tuesday	LA	DR AWAIS MAJEED,2	JB 4-17	11:00 - 12:00	E
+Friday	English	,	4-09	11:00 - 12:00	D

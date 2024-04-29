@@ -1,0 +1,6 @@
+﻿  MainForm.cpp
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\MainForm.h(325,17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Section.cpp
+  Generating Code...
+  DayTimetable.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Assignment 0.2.vcxproj -> C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment 0.2.exe
