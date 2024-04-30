@@ -1,0 +1,26 @@
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment 0.2.vcxproj.AssemblyReference.cache
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.DayTimetable.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.MainForm.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.Section.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.Teacher.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.TeacherTimetable1.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.ViewCourses.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.ViewRooms.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.ViewStudents.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.ViewTeacher.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment02.ViewTimetable.resources
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment 0.2.vcxproj.GenerateResource.cache
+C:\Users\zuhad\OneDrive\Desktop\New folder (3)\x64\Debug\Assignment 0.2.exe
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment 0.2.vcxproj.AssemblyReference.cache
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.DayTimetable.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.MainForm.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.Section.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.Teacher.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.TeacherTimetable1.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.ViewCourses.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.ViewRooms.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.ViewStudents.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.ViewTeacher.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment02.ViewTimetable.resources
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment 0.2.vcxproj.GenerateResource.cache
+D:\00p assign 2\New folder (3)\x64\Debug\Assignment 0.2.exe
